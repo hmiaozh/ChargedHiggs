@@ -57,7 +57,7 @@ public:
     bool doTrigger=false;
     bool doVVFrame=false;
 
-    bool doTMVA=true;
+    bool doTMVA=false;
 
 private:
 
@@ -175,6 +175,7 @@ protected:
     
 
     std::unique_ptr<JME::JetResolutionObject> jet_resolution;
+
 };
 
 

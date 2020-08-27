@@ -1859,7 +1859,7 @@ int VBShadAnalysis::analyze(Event *e, string systname)
     //$$$ CUT FLOW
     //////
 
-    double MVV_cut= (doVVFrame == false) ? 500 : 100;
+    double MVV_cut= (doVVFrame == false) ? 500 : 0;
     // CHECK THIS: adjust with trigger turn ones especially on BB and Btag
     if((category.find("RBtag")   !=string::npos ) or (category.find("RMET")   !=string::npos )) MVV_cut=400;
 
@@ -1916,7 +1916,7 @@ int VBShadAnalysis::analyze(Event *e, string systname)
 
     evt_Detajj = fabs(forwardJets[0]->DeltaEta(forwardJets[1]));
 
-    if( evt_Detajj < 3. ) return EVENT_NOT_USED;
+    //if( evt_Detajj < 3. ) return EVENT_NOT_USED;
 
     Fill("VBShadAnalysis/Cutflow_" +label, systname, 9, e->weight() );  //Delta Eta cut
 
@@ -1926,7 +1926,7 @@ int VBShadAnalysis::analyze(Event *e, string systname)
 
     Fill("VBShadAnalysis/FWJETS/Mjj" +category+"_"+label, systname, evt_Mjj, e->weight() );
 
-    if( evt_Mjj < 500 ) return EVENT_NOT_USED;
+    //if( evt_Mjj < 500 ) return EVENT_NOT_USED;
 
     Fill("VBShadAnalysis/Cutflow_" +label, systname, 10, e->weight() ); //InvMjet cut
 
@@ -1971,7 +1971,7 @@ int VBShadAnalysis::analyze(Event *e, string systname)
                            std::max(forwardJets[0]->Eta(),forwardJets[1]->Eta()) - evt_EtaMaxV
                            ) ;
         // why this is not taken from previous condition ?
-        if( evt_cenEta < 0. ) return EVENT_NOT_USED;
+        if(!doVVFrame && evt_cenEta < 0. ) return EVENT_NOT_USED;
     }
 
     if(selectedFatZbb.size()>0) {
