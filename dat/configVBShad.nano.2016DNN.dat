@@ -7,7 +7,7 @@ Loader=LoadNano|2016
 
 Files=
 ## Signal
-include=dat/catalog/2020.moriond/nano/year2016/vbshad_localmet.dat
+include=dat/catalog/2020.moriond/nano/year2016/vbshad_local.dat
 #include=dat/catalog/2020.moriond/nano/year2016/vbsDoublyCH.dat
 ##
 ### BKGS
@@ -35,15 +35,15 @@ EntryPerSecond=5
 
 Analysis=JsonAnalysis,MetFiltersAnalysis,VBShadAnalysis
 
-addConfig=VBShadAnalysis|doMETAnalysis=0,doBAnalysis=0,doHADAnalysis=1
-addConfig=VBShadAnalysis|year=2016
-Output=VBShadSignal_HAD.root
+#addConfig=VBShadAnalysis|doMETAnalysis=0,doBAnalysis=0,doHADAnalysis=1
+#addConfig=VBShadAnalysis|year=2016
+#Output=VBShadSignal_HAD.root
 
 #addConfig=VBShadAnalysis|doMETAnalysis=1,doBAnalysis=0,doHADAnalysis=0
 #addConfig=VBShadAnalysis|year=2016
 #Output=VBShadSignal_MET_2016.root
 
-#addConfig=VBShadAnalysis|doMETAnalysis=0,doBAnalysis=1,doHADAnalysis=0
-#addConfig=VBShadAnalysis|year=2016
-#Output=VBShadSignal_B.root
+addConfig=VBShadAnalysis|doMETAnalysis=0,doBAnalysis=1,doHADAnalysis=0
+addConfig=VBShadAnalysis|year=2016
+Output=VBShadSignal_B.root
 

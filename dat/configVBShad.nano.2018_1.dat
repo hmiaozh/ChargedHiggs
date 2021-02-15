@@ -1,0 +1,58 @@
+################
+### DATASETS ###
+################
+
+include=dat/config.nano.dat
+Loader=LoadNano|2018
+
+Files=
+## Signal
+#include=dat/catalog/2020.moriond/nano/year2018/vbshad_local.dat
+#include=dat/catalog/2020.moriond/nano/year2018/vbsDoublyCH.dat
+##
+### BKGS
+#include=dat/catalog/2020.moriond/nano/year2018/QCD.dat
+#include=dat/catalog/2020.moriond/nano/year2018/ttvbs.dat
+
+# add Label
+include=dat/vbshad.dat
+#__________________________________________________________________
+#____________________ COMMON SETTINGS _____________________________
+#
+
+#Files=root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/2018/ZNuNuWPMJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/507F95DC-EE31-F54F-9990-31B285412536.root
+#Files=root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/2018/ZBBWPMJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/03287BA9-57F7-444E-939E-A61EDA079909.root
+Files=root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/2018/ZBBWPMJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/A683DB76-8087-A545-B2E1-C80AA4F5FB98.root
+
+#Files=root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/2018/ZJJZJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/1B2456E9-FA5A-494F-B5D5-F986BC17687F.root
+
+#Files=root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/2018/ZJJZJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/1B2456E9-FA5A-494F-B5D5-F986BC17687F.root,root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/2018/WPMJJWPMJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/6880D5B7-3CBE-4D4E-914B-09E865F85C50.root,root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/2018/WPJJWMJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/5E4EB657-A09D-5244-AB27-B205C610D3E6.root
+
+
+SFDB=aux/sf_VBShad.txt
+MCDB=aux/mcdb.nano.2018.txt
+include=dat/json.2018.moriond.dat
+pileup=aux/pileup.nano.year2018.root
+
+Smear=NONE
+Correct=NONE
+#Correct=SDMasscorr
+Final=no
+
+## be less peaky, given the n. of systs
+EntryPerSecond=5
+
+Analysis=JsonAnalysis,MetFiltersAnalysis,VBShadAnalysis
+
+#addConfig=VBShadAnalysis|doMETAnalysis=0,doBAnalysis=0,doHADAnalysis=1
+#addConfig=VBShadAnalysis|year=2018
+#Output=VBShadSignal_HAD.root
+
+#addConfig=VBShadAnalysis|doMETAnalysis=1,doBAnalysis=0,doHADAnalysis=0
+#addConfig=VBShadAnalysis|year=2018
+#Output=VBShadSignal_MET_2018.root
+
+addConfig=VBShadAnalysis|doMETAnalysis=0,doBAnalysis=1,doHADAnalysis=0
+addConfig=VBShadAnalysis|year=2018
+Output=VBShadSignal_B_2018.root
+

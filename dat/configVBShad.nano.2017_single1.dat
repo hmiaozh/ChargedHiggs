@@ -1,0 +1,55 @@
+################
+### DATASETS ###
+################
+
+include=dat/config.nano.dat
+Loader=LoadNano|2017
+
+Files=
+## Signal
+#include=dat/catalog/2020.moriond/nano/year2017/vbshad_s1.dat
+#include=dat/catalog/2020.moriond/nano/year2017/vbsDoublyCH.dat
+##
+### BKGS
+#include=dat/catalog/2020.moriond/nano/year2017/QCD.dat
+#include=dat/catalog/2020.moriond/nano/year2017/ttvbs.dat
+
+# add Label
+include=dat/vbshad.dat
+#__________________________________________________________________
+#____________________ COMMON SETTINGS _____________________________
+#
+
+#Files=root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/2017/ZJJZJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/98F86E1E-8563-3742-BD1F-8E276EE954F8.root
+#Files=root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/2017/WPMJJWPMJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/35CBFF0A-17EB-7445-AE9E-C555561BC342.root
+#MET
+#Files=root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/2017/ZNuNuWPMJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/154E2A38-FC57-1249-AE86-03246DEA92B2.root
+Files=root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/2017/ZBBWPMJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/9702B938-5F31-4848-998A-077F9E6B1B0F.root
+
+###SFDB=aux/sf_database.2017.moriond.txt
+SFDB=aux/sf_VBShad.txt
+MCDB=aux/mcdb.nano.2017.txt
+include=dat/json.2017.moriond.dat
+pileup=aux/pileup.nano.year2017.root
+
+Smear=NONE
+Correct=NONE
+#Correct=SDMasscorr
+Final=no
+
+## be less peaky, given the n. of systs
+EntryPerSecond=5
+
+Analysis=JsonAnalysis,MetFiltersAnalysis,VBShadAnalysis
+
+#addConfig=VBShadAnalysis|doMETAnalysis=0,doBAnalysis=0,doHADAnalysis=1
+#addConfig=VBShadAnalysis|year=2017
+#Output=VBShadSignal_HAD.root
+
+#addConfig=VBShadAnalysis|doMETAnalysis=1,doBAnalysis=0,doHADAnalysis=0
+#addConfig=VBShadAnalysis|year=2017
+#Output=VBShadSignal_MET_flower.root
+
+addConfig=VBShadAnalysis|doMETAnalysis=0,doBAnalysis=1,doHADAnalysis=0
+addConfig=VBShadAnalysis|year=2017
+Output=VBShadSignal_B.root
