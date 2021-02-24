@@ -7,7 +7,7 @@ Loader=LoadNano|2018
 
 Files=
 ## Signal
-include=dat/catalog/2020.moriond/nano/year2018/vbshad_localmet.dat
+#include=dat/catalog/2020.moriond/nano/year2018/vbshad_localmet.dat
 #include=dat/catalog/2020.moriond/nano/year2018/vbsDoublyCH.dat
 ##
 ### BKGS
@@ -22,6 +22,7 @@ include=dat/vbshad.dat
 
 #Files=root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/UL18/ZNuNuWPMJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/507F95DC-EE31-F54F-9990-31B285412536.root
 #Files=root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/UL18/ZBBWPMJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/03287BA9-57F7-444E-939E-A61EDA079909.root
+Files=root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/2018/ZJJZJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/1B2456E9-FA5A-494F-B5D5-F986BC17687F.root,root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/2018/WPMJJWPMJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/6880D5B7-3CBE-4D4E-914B-09E865F85C50.root,root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/2018/WPJJWMJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/5E4EB657-A09D-5244-AB27-B205C610D3E6.root,root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/2018/ZJJZJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/46D5E109-B56C-B048-BE7C-D158E8ED0AEA.root,root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/2018/WPMJJWPMJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/918E3B3B-CE06-364C-BA1F-FD35E55EA50D.root,root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/2018/WPJJWMJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/AC782FE3-1DCD-154F-93D1-0B3CB6F42FFD.root,root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/2018/ZJJZJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/6D074029-D62A-7C4A-BDBE-70C850867EFF.root,root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/2018/WPMJJWPMJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/F183DD2E-5521-B94A-B1A4-87AA2DDC951F.root,root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/2018/WPJJWMJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/FB47DD48-3D99-3D4F-B99A-33A43FBEEB4E.root
 
 
 SFDB=aux/sf_VBShad.txt
@@ -41,7 +42,7 @@ Analysis=JsonAnalysis,MetFiltersAnalysis,VBShadAnalysis
 
 addConfig=VBShadAnalysis|doMETAnalysis=0,doBAnalysis=0,doHADAnalysis=1
 addConfig=VBShadAnalysis|year=2018
-Output=VBShadSignal_HAD.root
+Output=VBShadSignal_HAD_1_4_11.root
 
 #addConfig=VBShadAnalysis|doMETAnalysis=1,doBAnalysis=0,doHADAnalysis=0
 #addConfig=VBShadAnalysis|year=2018
