@@ -54,6 +54,7 @@ public:
     void studyTriggers(Event*e, string category, string label, string systname);
     float genMtt(Event*e);
     bool genMatchResolved(Event*e, string systname, string label);
+    bool genMatchResonant(Event*e, string label, string category);
 
     bool doMETAnalysis=false;
     bool doBAnalysis=false;
