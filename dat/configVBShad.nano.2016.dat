@@ -7,12 +7,13 @@ Loader=LoadNano|2016
 
 Files=
 ## Signal
-#include=dat/catalog/2020.moriond/nano/year2016/vbshad_localmet.dat
+#include=dat/catalog/2020.moriond/nano/year2016/vbshad_local.dat
 #include=dat/catalog/2020.moriond/nano/year2016/vbsDoublyCH.dat
 ##
 ### BKGS
-#include=dat/catalog/2020.moriond/nano/year2016/QCD.dat
+include=dat/catalog/2020.moriond/nano/year2016/QCD_local.dat
 #include=dat/catalog/2020.moriond/nano/year2016/ttvbs.dat
+include=dat/catalog/2020.moriond/nano/year2016/tt_local.dat
 
 # add Label
 include=dat/vbshad.dat
@@ -20,8 +21,8 @@ include=dat/vbshad.dat
 #____________________ COMMON SETTINGS _____________________________
 #
 
-Files=root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/2016/ZJJZJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/4299A43F-9765-9C4C-B9BF-EE20EA1EADF4.root,root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/2016/WPMJJWPMJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/AB7AD84D-DA62-014D-B233-D3A3ED41B7F7.root,root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/2016/ZJJZJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/F34904A8-D371-3A43-93B1-8B101B7DB6A6.root,root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/2016/WPJJWMJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/47AA604B-50B8-3348-AA3F-1F9E131CC1BA.root
-
+#Files=root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/2016/ZJJZJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/4299A43F-9765-9C4C-B9BF-EE20EA1EADF4.root,root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/2016/WPMJJWPMJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/AB7AD84D-DA62-014D-B233-D3A3ED41B7F7.root,root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/2016/ZJJZJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/F34904A8-D371-3A43-93B1-8B101B7DB6A6.root,root://eoscms///store/group/phys_higgs/HiggsExo/dalfonso/NANOV8/2016/WPJJWMJJjj_EWK_LO_TuneCP5_13TeV-madgraph-pythia8/47AA604B-50B8-3348-AA3F-1F9E131CC1BA.root
+#Files=root://eoscms///store/group/phys_higgs/cmshmm/amarini/nano/2016/JetHT/crab_JetHT_2016_Run2016B-ver2_HIPM_/210301_084750/0000/nano_30.root,root://eoscms///store/group/phys_higgs/cmshmm/amarini/nano/2016/JetHT/crab_JetHT_2016_Run2016G-/210301_084835/0000/nano_61.root
 
 SFDB=aux/sf_VBShad.txt
 MCDB=aux/mcdb.nano.2016.txt
@@ -38,17 +39,19 @@ EntryPerSecond=5
 
 Analysis=JsonAnalysis,MetFiltersAnalysis,VBShadAnalysis
 
-addConfig=VBShadAnalysis|doMETAnalysis=0,doBAnalysis=0,doHADAnalysis=1
-addConfig=VBShadAnalysis|year=2016
-Output=VBShadSignal_HAD_5_13.root
+include=dat/catalog/2020.moriond/nano/year2016/jetHT_local.dat
+#addConfig=VBShadAnalysis|doMETAnalysis=0,doBAnalysis=0,doHADAnalysis=1
+#addConfig=VBShadAnalysis|year=2016
+#Output=VBShadSignal_HAD.root
+
 
 #addConfig=VBShadAnalysis|doMETAnalysis=1,doBAnalysis=0,doHADAnalysis=0
 #addConfig=VBShadAnalysis|year=2016
 #Output=VBShadSignal_MET_2016.root
 
-#addConfig=VBShadAnalysis|doMETAnalysis=0,doBAnalysis=1,doHADAnalysis=0
-#addConfig=VBShadAnalysis|year=2016
-#Output=VBShadSignal_B.root
+addConfig=VBShadAnalysis|doMETAnalysis=0,doBAnalysis=1,doHADAnalysis=0
+addConfig=VBShadAnalysis|year=2016
+Output=VBShadSignal_B.root
 
 ##
 

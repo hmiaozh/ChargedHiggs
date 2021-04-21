@@ -31,7 +31,6 @@ public:
     void EndEvent() override;
     void setTree(Event*e, string label, string  category);
     void setTrainingTree(Event*e, string label, int fi, int fj, int vk, int vl);
-    void setTrainingTree2nd(Event*e, string label, int fi, int fj, float maxdnn, float max2nddnn);
 
     void writeTree(string name, int purp);
 
@@ -69,11 +68,11 @@ public:
     bool doWriteTree = true;
     bool usePuppi=false;
     bool doTrigger=false;
-    bool writeTrainTree=true;
+    bool writeTrainTree=false;
 
-    bool doTMVA=false;
+    bool doTMVA=true;
     bool doResTagKeras = false;
-    bool doResTagTMVA = true;
+    bool doResTagTMVA = false;
     // those two below are to prune the combination
     bool doMultiTagger = false;
     bool do2DNN = false;
@@ -106,6 +105,8 @@ private:
     // selected Objects
     vector<Jet*> selectedJets;
     vector<FatJet*> selectedFatJets;
+    vector<FatJet*> selectedFatJetsIn;
+    vector<FatJet*> selectedFatJetsOut;
     vector<FatJet*> selectedMirrorFatJets;
     vector<FatJet*> selectedFatZbb;
 
@@ -163,12 +164,13 @@ private:
     float evt_bosV2mass=-1;
     float evt_bosV2discr=-1;
     float evt_bosV2tdiscr=-1;
+    float evt_bosV2discr2nd=-1;
     float evt_bosV2unc = 0;
     float evt_chi2_= -1;
-    float bos_maxDnn = 0.;
-    float bos_2ndmaxDnn = 0;
+    float evt_maxDnn = 0.;
+    float evt_2ndmaxDnn = 0.;
     float evt_v_score = 0.;
-    float bos_maxkeras = -999.;
+    float evt_maxkeras = -999.;
     int    index_f1 = -1;
     int    index_f2 = -1;
     int    index_v1 = -1;
@@ -205,7 +207,7 @@ private:
     vector<TMVA::Reader*> readers_dnn_;
 
     void InitTmva();
-    void ReadTmva();
+    void ReadTmva(Event*e);
 
     /**********************************
      *          SCIKIT                *
